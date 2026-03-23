@@ -7,96 +7,126 @@
     <style>
         :root {
             --primary: #2c3e50;
-            --secondary: #34495e;
-            --accent: #3498db;
             --day1: #2980b9;
             --day2: #e67e22;
             --day3: #27ae60;
             --bg: #f8f9fa;
-            --text: #333;
         }
-        body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg); margin: 0; padding: 0; color: var(--text); line-height: 1.6; }
-        header { background: var(--primary); color: white; text-align: center; padding: 1.5rem 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
-        header h1 { margin: 0; font-size: 1.5rem; }
-        header p { margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--bg); margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        header { background: var(--primary); color: white; text-align: center; padding: 20px 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { padding: 15px; max-width: 600px; margin: auto; }
         
-        .container { padding: 15px; max-width: 700px; margin: auto; }
+        .rationale-box { background: #fff3cd; border-right: 5px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px; font-size: 0.95rem; }
         
-        .card { background: white; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); overflow: hidden; border: 1px solid #eee; }
-        .card-header { padding: 15px 20px; color: white; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: 0.3s; }
-        .card-header:hover { opacity: 0.9; }
+        .day-card { background: white; border-radius: 12px; margin-bottom: 15px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); overflow: hidden; border: 1px solid #eee; }
+        .day-title { padding: 15px; color: white; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; font-size: 1.1rem; }
         
-        .content { display: none; padding: 20px; background: white; }
-        .unit { border-right: 4px solid #ddd; padding-right: 15px; margin-bottom: 25px; }
-        .unit:last-child { margin-bottom: 0; }
-        .unit h3 { margin: 0 0 8px; color: var(--primary); font-size: 1.1rem; }
-        .unit h4 { margin: 10px 0 5px; font-size: 0.95rem; color: #555; }
-        .unit p, .unit li { font-size: 0.9rem; margin: 5px 0; color: #444; }
-        ul { padding-right: 20px; margin: 5px 0; }
+        .day-content { display: none; padding: 15px; }
+        .unit { border-right: 3px solid #ddd; padding-right: 12px; margin-bottom: 20px; }
+        .unit h3 { margin: 0 0 5px; font-size: 1.05rem; color: var(--primary); }
+        .unit p { margin: 5px 0; font-size: 0.9rem; }
+        ul { padding-right: 20px; margin: 5px 0; font-size: 0.9rem; }
 
-        .badge { background: #eee; color: #666; padding: 3px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: normal; }
+        .appendix { background: #eaeff2; padding: 15px; border-radius: 12px; margin-top: 20px; }
+        .btn { display: block; background: var(--primary); color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
         
-        .rationale { background: #fff3cd; border-right: 5px solid #ffc107; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
-        .appendix-btn { display: block; background: var(--primary); color: white; text-align: center; padding: 15px; border-radius: 10px; text-decoration: none; font-weight: bold; margin-top: 10px; transition: 0.3s; }
-        .appendix-btn:hover { background: var(--accent); }
-
-        .active { display: block; }
-        .rotated { transform: rotate(180deg); }
-        .arrow { transition: 0.3s; font-size: 0.8rem; }
+        .active { display: block !important; }
+        .rotate { transform: rotate(180deg); transition: 0.3s; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>מרימים משקפת 🔭</h1>
-    <p>תוכנית הכשרה למנחה - גרסה מורחבת 2025</p>
+    <p>גרסת הכשרות מורחבת 2025</p>
 </header>
 
 <div class="container">
 
-    <div class="rationale">
-        <strong>רציונל הסדנה:</strong>
-        <p>השירות בגדוד מאופיין בשחיקה ותחושת "אוטומט". הסדנה נועדה לייצר עצירה להתבוננות ("הנפת משקפת"), חיזוק הקשר הבינאישי והחזרת תחושת המשמעות והנראות לכל לוחם דרך מודל זיקה-חותם-הכרה.</p>
+    <div class="rationale-box">
+        <strong>רציונל הסדנה:</strong> [cite: 1720, 1831]
+        הסדנה נועדה לייצר "עצירה" לעיבוד חוויות השירות ומתן "משקפיים" יעילות להתבוננות על המשך השירות כלוחם ותיק. [cite: 1720] המטרה היא חיזוק המסגרת הלוחמת ותחושת המשמעות דרך מודל של נראות והכרה. [cite: 1713, 1715]
     </div>
 
-    <div class="card">
-        <div class="card-header" style="background-color: var(--day1);" onclick="toggle(this, 'day1')">
-            <span>יום 1: הכנה ופיתוח סגל</span>
-            <span class="arrow">▼</span>
-        </div>
-        <div id="day1" class="content">
-            <div class="unit" style="border-right-color: var(--day1);">
-                <h3>1. פתיחת מוביל ושיחת מנחה-מ"מ <span class="badge">עמ' 24-25</span></h3>
-                <h4>מטרה:</h4> <p>תיאום ציפיות ובניית חוזה עבודה אישי מול המפקד.</p>
-                <h4>תוכן מפורט:</h4>
+    <div class="day-card">
+        <div class="day-title" style="background: var(--day1);" onclick="toggle(this, 'd1')">יום 1: הכנה ופיתוח סגל <span>▼</span></div>
+        <div id="d1" class="day-content">
+            <div class="unit">
+                <h3>פתיחת מוביל ושיחת מ"מ</h3>
+                <p><b>מטרה:</b> יצירת חוזה עבודה אישי ודיסקרטי. [cite: 1991, 2167]</p>
                 <ul>
-                    <li>בירור תמונת המחלקה: מוקדי כוח, דמויות משפיעות, אירועי עבר.</li>
-                    <li>הגדרת "שאלת מחקר" (למשל: למה יש שחיקה במחלקה?).</li>
-                    <li>הגדרת חלוקת תפקידים: המנחה כמאפשר, המ"מ כבעל הבית.</li>
+                    <li>בירור ה"אני מאמין" הפיקודי של המ"מ. [cite: 2168]</li>
+                    <li>מיפוי אתגרי המחלקה וזיהוי "שאלת מחקר". [cite: 2167, 2171]</li>
                 </ul>
             </div>
-            <div class="unit" style="border-right-color: var(--day1);">
-                <h3>2. פיתוח והכנת סגל <span class="badge">עמ' 26-28</span></h3>
-                <h4>מטרה:</h4> <p>רתימת המ"כים כקבוצה מובילה ויישור קו ערכי.</p>
-                <h4>תוכן מפורט:</h4>
+            <div class="unit">
+                <h3>לראות ולהיראות (מודל המשמעות)</h3>
+                <p><b>מטרה:</b> הבנת מנגנון המשמעות בקהילה. [cite: 2313, 2334]</p>
                 <ul>
-                    <li>תרגיל "דירוג הסגל": איך הלוחמים רואים אותנו כרגע?</li>
-                    <li>דיון על "אחדות פיקודית" ומניעת התערבבות יתר עם הלוחמים.</li>
-                    <li>חיזוק תחושת המסוגלות של המ"כים להובלת התהליך.</li>
-                </ul>
-            </div>
-            <div class="unit" style="border-right-color: var(--day1);">
-                <h3>3. יחידת "לראות ולהיראות" <span class="badge">עמ' 29-32</span></h3>
-                <h4>מטרה:</h4> <p>הקניית המודל התיאורטי למפקדים.</p>
-                <h4>תוכן מפורט:</h4>
-                <ul>
-                    <li><strong>זיקה:</strong> יצירת שייכות וחיבור אנושי במחלקה.</li>
-                    <li><strong>חותם:</strong> מתן מקום לביטוי אישי והשפעה של הלוחם.</li>
-                    <li><strong>הכרה:</strong> פעולת המפקד שרואה את המאמץ ומתקף אותו.</li>
+                    <li><b>זיקה:</b> הקשר לקבוצה. [cite: 2326, 2331]</li>
+                    <li><b>חותם:</b> השפעה אישית של הלוחם. [cite: 2326, 2332]</li>
+                    <li><b>הכרה:</b> תגובת הסביבה והמפקד למעשי הלוחם. [cite: 2327, 2337]</li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="card">
-        <div class="card-header" style="background-color: var(--day2);" onclick="toggle(this
+    <div class="day-card">
+        <div class="day-title" style="background: var(--day2);" onclick="toggle(this, 'd2')">יום 2: פיתוח מחלקתי <span>▼</span></div>
+        <div id="d2" class="day-content">
+            <div class="unit">
+                <h3>המחלקה במיטבה ומיפוי פערים</h3>
+                <p><b>מטרה:</b> הגדרת הסטנדרט המצופה מהמחלקה. [cite: 2881, 2885]</p>
+                <ul>
+                    <li>בניית "תמונת המיטב" של המחלקה. [cite: 2885, 2895]</li>
+                    <li>זיהוי פערים מול המצב הקיים ביומיום. [cite: 2901, 2912]</li>
+                </ul>
+            </div>
+            <div class="unit">
+                <h3>חקירה לעומק</h3>
+                <p><b>מטרה:</b> פירוק בעיות לפתרונות. [cite: 2931, 2938]</p>
+                <p>ארבעת השלבים: איך זה נראה? מה המחיר? למה זה קורה? מה עושים אחרת? [cite: 2950, 2954]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-card">
+        <div class="day-title" style="background: var(--day3);" onclick="toggle(this, 'd3')">יום 3: יישום וסיכום <span>▼</span></div>
+        <div id="d3" class="day-content">
+            <div class="unit">
+                <h3>במה אישית</h3>
+                <p><b>מטרה:</b> נראות ללוחם מעבר למדים. [cite: 3121, 3130]</p>
+                <p>מתן הזדמנות ללוחמים להציג תחביב או כישרון ייחודי המייצר "חותם" במחלקה. [cite: 3122, 3126]</p>
+            </div>
+            <div class="unit">
+                <h3>תרגול שיחת צוות</h3>
+                <p><b>מטרה:</b> החזרת המקל הפיקודי למ"מ. [cite: 3194, 3200]</p>
+                <p>המ"מ מוביל שיחת מחלקה מלאה הכוללת סיכום החלטות וצעדים קדימה. [cite: 3205, 3208]</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="appendix">
+        <h3>📚 נספחים ומקורות</h3>
+        <p><b>קישור לחוברת המקורית:</b></p>
+        <a href="https://drive.google.com/file/d/11pS5opf3smmlKeJ-NJp1CIONUh5YQpzR/view?usp=sharing" target="_blank" class="btn">פתיחת חוברת המנחה 📖</a>
+    </div>
+
+</div>
+
+<script>
+    function toggle(el, id) {
+        var content = document.getElementById(id);
+        var arrow = el.querySelector('span');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            arrow.style.transform = "rotate(0deg)";
+        } else {
+            content.style.display = "block";
+            arrow.style.transform = "rotate(180deg)";
+        }
+    }
+</script>
+
+</body>
+</html>
