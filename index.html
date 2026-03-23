@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מרימים משקפת - עוזר למנחה</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f4f4f9; margin: 0; padding: 0; color: #333; }
+        header { background-color: #2c3e50; color: white; text-align: center; padding: 1rem; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .container { padding: 15px; max-width: 600px; margin: auto; }
+        .day-section { background: white; border-radius: 12px; margin-bottom: 20px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .day-header { background: #3498db; color: white; padding: 15px; font-weight: bold; font-size: 1.2rem; cursor: pointer; display: flex; justify-content: space-between; }
+        .content { padding: 15px; display: none; }
+        .unit { border-right: 4px solid #3498db; padding-right: 15px; margin-bottom: 20px; }
+        .unit h4 { margin: 0 0 5px 0; color: #2980b9; }
+        .unit p { margin: 5px 0; font-size: 0.95rem; line-height: 1.5; }
+        .badge { background: #e8f4fd; color: #2980b9; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; }
+        .appendix { background: #ecf0f1; border-radius: 12px; padding: 15px; margin-top: 20px; }
+        .btn-link { display: block; background: #27ae60; color: white; text-align: center; padding: 12px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 10px; }
+        .active { display: block; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>מרימים משקפת 🔭</h1>
+    <p>עוזר דיגיטלי למנחה</p>
+</header>
+
+<div class="container">
+
+    <div class="day-section">
+        <div class="day-header" onclick="toggleContent('day1')">יום 1: הכנה ופיתוח סגל <span>▼</span></div>
+        <div id="day1" class="content">
+            <div class="unit">
+                <h4>1. פתיחה ושיחת מ"מ <span class="badge">45 דק'</span></h4>
+                <p><b>מטרה:</b> בניית חוזה עבודה מול המפקד.</p>
+                <p><b>תוכן:</b> תיאום ציפיות, מיפוי דמויות מפתח במחלקה והגדרת "שאלת מחקר" לסדנה.</p>
+            </div>
+            <div class="unit">
+                <h4>2. פיתוח והכנת סגל <span class="badge">90 דק'</span></h4>
+                <p><b>מטרה:</b> רתימת המ"כים כשותפים.</p>
+                <p><b>תוכן:</b> תפיסת הסגל בעיני הלוחמים, יצירת אחדות פיקודית ושפה משותפת.</p>
+            </div>
+            <div class="unit">
+                <h4>3. לראות ולהיראות <span class="badge">60 דק'</span></h4>
+                <p><b>מטרה:</b> הקניית מודל המשמעות.</p>
+                <p><b>תוכן:</b> זיקה (שייכות), חותם (השפעה) והכרה (נראות ע"י המפקד).</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header" onclick="toggleContent('day2')" style="background-color: #e67e22;">יום 2: פיתוח מחלקתי <span>▼</span></div>
+        <div id="day2" class="content">
+            <div class="unit">
+                <h4>1. פתיחה וחוזה <span class="badge">30 דק'</span></h4>
+                <p><b>מטרה:</b> יצירת מרחב בטוח.</p>
+                <p><b>תוכן:</b> משחק שבירת קרח והגדרת כללי שיח (הקשבה, סודיות).</p>
+            </div>
+            <div class="unit">
+                <h4>2. המחלקה במיטבה <span class="badge">60 דק'</span></h4>
+                <p><b>מטרה:</b> הגדרת חזון לוחמים.</p>
+                <p><b>תוכן:</b> עבודה בקבוצות על "מחלקה שכיף להיות בה" ויצירת לוח ערכים.</p>
+            </div>
+            <div class="unit">
+                <h4>3. חקירה לעומק <span class="badge">90 דק'</span></h4>
+                <p><b>מטרה:</b> הצפת פערים ובניית פתרונות.</p>
+                <p><b>תוכן:</b> תיאור הפער -> המחיר שלו -> סיבות שורש -> מה עושים אחרת?</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="day-section">
+        <div class="day-header" onclick="toggleContent('day3')" style="background-color: #27ae60;">יום 3: יישום וסיכום <span>▼</span></div>
+        <div id="day3" class="content">
+            <div class="unit">
+                <h4>1. במה אישית <span class="badge">60 דק'</span></h4>
+                <p><b>מטרה:</b> האנשה ויצירת חותם.</p>
+                <p><b>תוכן:</b> לוחמים מציגים סיפור אישי או כישרון מעבר למדים.</p>
+            </div>
+            <div class="unit">
+                <h4>2. שיחת צוות (הובלת מ"מ) <span class="badge">45 דק'</span></h4>
+                <p><b>מטרה:</b> החזרת המקל למפקד.</p>
+                <p><b>תוכן:</b> המ"מ מגיב ליומיים האחרונים ומציג החלטות פיקודיות ליישום בשטח.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="appendix">
+        <h3>📚 עזרים וקישורים</h3>
+        <p><b>רציונל:</b> שיפור החוסן והמשמעות בקרב לוחמים ותיקים דרך ראיית הלוחם כ"אדם".</p>
+        <a href="https://drive.google.com/file/d/11pS5opf3smmlKeJ-NJp1CIONUh5YQpzR/view?usp=sharing" target="_blank" class="btn-link">פתח חוברת מנחה מלאה 📖</a>
+    </div>
+
+</div>
+
+<script>
+    function toggleContent(id) {
+        var content = document.getElementById(id);
+        if (content.style.display === "block") {
+            content.style.display = "none";
+        } else {
+            content.style.display = "block";
+        }
+    }
+</script>
+
+</body>
+</html>
