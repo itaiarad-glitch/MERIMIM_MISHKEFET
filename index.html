@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מרימים משקפת - אפליקציית מנחה (גרסת עומק)</title>
+    <title>מרימים משקפת - אפליקציית מנחה </title>
     <style>
         :root {
             --primary: #2c3e50;
@@ -16,120 +16,121 @@
         header { background: var(--primary); color: white; text-align: center; padding: 25px 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
         .container { padding: 15px; max-width: 700px; margin: auto; }
         
-        .card { background: white; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; }
-        .card-header { padding: 18px; color: white; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; font-size: 1.2rem; }
+        .rationale-card { background: #fff3cd; border-right: 6px solid #ffc107; padding: 20px; border-radius: 12px; margin-bottom: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+        .rationale-card h2 { margin-top: 0; font-size: 1.2rem; color: #856404; }
+
+        .card { background: white; border-radius: 15px; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; border: 1px solid #ddd; }
+        .card-header { padding: 20px; color: white; font-weight: bold; cursor: pointer; display: flex; justify-content: space-between; font-size: 1.25rem; }
         .card-content { display: none; padding: 20px; }
         
-        .unit { border-right: 5px solid #ddd; padding-right: 15px; margin-bottom: 30px; }
-        .unit h3 { margin: 0 0 10px; color: var(--primary); font-size: 1.2rem; background: #f9f9f9; padding: 5px 10px; border-radius: 4px; }
-        .details { margin-bottom: 15px; }
-        .details strong { color: #d35400; display: block; margin-bottom: 5px; }
+        .unit { border-right: 5px solid #ddd; padding-right: 18px; margin-bottom: 35px; position: relative; }
+        .unit h3 { margin: 0 0 12px; color: var(--primary); font-size: 1.3rem; background: #f9f9f9; padding: 8px 12px; border-radius: 6px; }
         
-        .question-box { background: #e8f4fd; border: 1px dashed #3498db; padding: 12px; border-radius: 8px; margin: 10px 0; }
-        .question-box em { font-style: normal; font-weight: bold; color: #2980b9; }
+        .section-title { font-weight: bold; color: #d35400; display: block; margin-top: 15px; border-bottom: 1px solid #eee; }
+        
+        .question-box { background: #e8f4fd; border: 1px dashed #3498db; padding: 15px; border-radius: 10px; margin: 12px 0; font-style: italic; }
+        .question-box span { font-weight: bold; color: #2980b9; display: block; margin-bottom: 5px; font-style: normal; }
 
-        .highlights { background: #fdf2e9; border-right: 4px solid #e67e22; padding: 10px 15px; margin: 10px 0; font-size: 0.95rem; }
+        .pro-tip { background: #fdf2e9; border-right: 4px solid #e67e22; padding: 12px 18px; margin: 15px 0; font-size: 0.95rem; border-radius: 0 8px 8px 0; }
+        .pro-tip strong { color: #e67e22; display: block; margin-bottom: 3px; }
 
-        .btn { display: block; background: var(--primary); color: white; text-align: center; padding: 15px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+        .methodology { background: #f8f9fa; padding: 15px; border-radius: 8px; border: 1px solid #e1e4e8; margin-top: 10px; }
+        .methodology ol { margin: 10px 0; padding-right: 25px; }
+
+        .footer-nav { margin-top: 30px; text-align: center; padding-bottom: 40px; }
+        .btn { display: inline-block; background: var(--primary); color: white; text-align: center; padding: 16px 30px; border-radius: 10px; text-decoration: none; font-weight: bold; transition: 0.3s; width: 80%; }
         
         .active { display: block; }
-        ul { padding-right: 20px; }
-        li { margin-bottom: 5px; }
+        ul { padding-right: 25px; }
+        li { margin-bottom: 8px; }
+        .arrow { transition: 0.3s; }
+        .rotate { transform: rotate(180deg); }
     </style>
 </head>
 <body>
 
 <header>
     <h1>מרימים משקפת 🔭</h1>
-    <p>מדריך עומק למנחה | הכשרות 2025</p>
+    <p>מדריך עומק למנחה | גרסת 2025</p>
 </header>
 
 <div class="container">
+
+    <div class="rationale-card">
+        <h2>💡 רציונל ומטרות על</h2>
+        <p><strong>האתגר:</strong> לוחמים בשירות ותיק חווים ירידה במוטיבציה (שחיקה), תחושת "אוטומט" וחוסר נראות אישית.</p>
+        <p><strong>הפתרון:</strong> הסדנה מייצרת עצירה ("הרמת משקפת") המאפשרת למפקד וללוחמים לראות אחד את השני מחדש, לייצר שפה של משמעות ולחזק את החוסן המחלקתי.</p>
+        <p><strong>הנחת היסוד:</strong> לוחם שמרגיש שרואים אותו (הכרה) ושמעשיו משפיעים (חותם), יהיה לוחם טוב ומחויב יותר.</p>
+    </div>
 
     <div class="card">
         <div class="card-header" style="background: var(--day1);" onclick="toggle(this, 'd1')">יום 1: הכנה ופיתוח סגל <span>▼</span></div>
         <div id="d1" class="card-content">
             
             <div class="unit" style="border-right-color: var(--day1);">
-                <h3>יחידה 1: שיחת מנחה-מ"מ</h3>
-                <div class="details">
-                    <strong>שאלות מנחות למ"מ:</strong>
-                    <div class="question-box">
-                        <ul>
-                            <li>"איך היית מגדיר את ה-DNA של המחלקה שלך במילה אחת?"</li>
-                            <li>"מי הם הלוחמים שמושכים את העגלה ומי אלו שמרגישים 'שקופים'?"</li>
-                            <li>"מה הדבר שאם ישתנה בסוף הסדנה, תרגיש שהיא הצליחה?"</li>
-                        </ul>
-                    </div>
+                <h3>יחידה 1: פתיחה ושיחת מנחה-מ"מ</h3>
+                <span class="section-title">שאלות מפתח למפקד:</span>
+                <div class="question-box">
+                    <span>המנחה שואל:</span>
+                    <ul>
+                        <li>"איך נראית 'שגרה טובה' במחלקה שלך ואיך נראית 'שגרה שוחקת'?"</li>
+                        <li>"מי הלוחמים שצריכים הכי הרבה נראות כרגע ולא מקבלים אותה?"</li>
+                        <li>"מה האתגר הפיקודי הכי גדול שלך מול הסגל (המ"כים)?"</li>
+                    </ul>
                 </div>
-                <div class="highlights">
-                    <strong>דגש למנחה:</strong> בשיחה זו עליך לעבור מ"מנחה" ל"שותף". המ"מ צריך להרגיש שאתה פה כדי לעזור לו להצליח, לא כדי להעביר עליו ביקורת.
+                <div class="pro-tip">
+                    <strong>דגש למנחה:</strong> בשיחה זו עליך לבנות "ברית" עם המ"מ. ודא שהוא מבין שהסדנה היא כלי עבודה עבורו ולא "יום חינוך" חיצוני.
                 </div>
             </div>
 
             <div class="unit" style="border-right-color: var(--day1);">
-                <h3>יחידה 2: פיתוח והכנת סגל (מ"כים)</h3>
-                <div class="details">
-                    <strong>שאלות לדיון עם הסגל:</strong>
-                    <div class="question-box">
-                        <ul>
-                            <li>"איפה עובר הגבול בין להיות חבר של הלוחם לבין להיות מפקד שלו?"</li>
-                            <li>"מה הכי שוחק אתכם ביומיום ואיך זה משפיע על הלוחמים שלכם?"</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="highlights">
-                    <strong>דגש למנחה:</strong> שים לב למתח בין המ"מ למ"כים. תפקידך לייצר חזית אחידה לקראת המפגש עם הלוחמים מחר.
+                <h3>יחידה 2: פיתוח סגל (מ"מ + מ"כים)</h3>
+                <span class="section-title">מתודולוגיה - "תרגיל הראי":</span>
+                <p>בקש מהסגל לדרג: "כמה הלוחמים מרגישים שהסגל סופר אותם?". השווה בין התשובות של המ"מ למ"כים.</p>
+                <div class="question-box">
+                    <span>לדיון:</span>
+                    "איפה אנחנו כסגל מאבדים את הלוחמים שלנו ביומיום? (מסדרים, משימות לוגיסטיות, שג"מ)".
                 </div>
             </div>
 
             <div class="unit" style="border-right-color: var(--day1);">
                 <h3>יחידה 3: מודל זיקה-חותם-הכרה</h3>
-                <div class="details">
-                    <strong>מושגי מפתח:</strong>
-                    <ul>
-                        <li><strong>זיקה:</strong> האם הלוחם מרגיש שייך? (קבוצת שווים).</li>
-                        <li><strong>חותם:</strong> האם הוא מרגיש שהוא משפיע? (ערך אישי).</li>
-                        <li><strong>הכרה:</strong> האם המפקד רואה את המאמץ שלו? (נראות).</li>
-                    </ul>
-                </div>
-                <div class="highlights">
-                    <strong>דגש למנחה:</strong> השתמש בדוגמאות מהחיים (לייק בפייסבוק לעומת תגובה אישית) כדי להסביר את ההבדל בין הכרה שטחית להכרה עמוקה.
-                </div>
+                <span class="section-title">שאלות להעמקת המודל:</span>
+                <ul>
+                    <li><strong>זיקה:</strong> "מי במחלקה מרגיש בבית ומי מרגיש אורח?"</li>
+                    <li><strong>חותם:</strong> "אילו יכולות של הלוחמים (ציור, נגינה, ארגון) לא באות לידי ביטוי בגלל המדים?"</li>
+                    <li><strong>הכרה:</strong> "מתי לאחרונה נתת משוב ללוחם על המאמץ שלו, לא רק על התוצאה?"</li>
+                </ul>
             </div>
         </div>
     </div>
 
     <div class="card">
-        <div class="card-header" style="background: var(--day2);" onclick="toggle(this, 'd2')">יום 2: פיתוח מחלקתי <span>▼</span></div>
+        <div class="card-header" style="background: var(--day2);" onclick="toggle(this, 'd2')">יום 2: פיתוח מחלקתי (לוחמים) <span>▼</span></div>
         <div id="d2" class="card-content">
             
             <div class="unit" style="border-right-color: var(--day2);">
                 <h3>יחידה 1: המחלקה במיטבה</h3>
-                <div class="details">
-                    <strong>שאלות ללוחמים:</strong>
-                    <div class="question-box">
-                        <ul>
-                            <li>"תארו רגע אחד במחלקה שבו הרגשתם גאווה להיות פה."</li>
-                            <li>"אם הייתם צריכים לכתוב 'ערך' אחד על קיר המועדון, מה הוא היה?"</li>
-                        </ul>
-                    </div>
+                <div class="question-box">
+                    <span>תרגיל פתיחה:</span>
+                    "דמיינו שהמחלקה היא חברת הייטק או קבוצת ספורט מצליחה. מהם 3 הכללים שגורמים לכולם לרצות לעבוד פה?"
                 </div>
+                <p><strong>המטרה:</strong> לייצר "צפון" מוסכם שהלוחמים עצמם הגדירו.</p>
             </div>
 
             <div class="unit" style="border-right-color: var(--day2);">
-                <h3>יחידה 2: חקירה לעומק (4 השלבים)</h3>
-                <div class="details">
-                    <strong>מתודולוגיית עבודה:</strong>
+                <h3>יחידה 2: חקירה לעומק ומיפוי פערים</h3>
+                <span class="section-title">מתודולוגיית 4 השלבים:</span>
+                <div class="methodology">
                     <ol>
-                        <li><strong>תיאור (מה?):</strong> מה העובדות בשטח?</li>
-                        <li><strong>פרשנות ומחיר (אז מה?):</strong> מה זה מעולל לנו?</li>
-                        <li><strong>סיבות (למה?):</strong> מה השורש העמוק של הבעיה?</li>
-                        <li><strong>פעולה (מה עכשיו?):</strong> מה עושים אחרת מחר בבוקר?</li>
+                        <li><strong>תיאור:</strong> מה קורה בפועל שמעצבן/שוחק אותנו?</li>
+                        <li><strong>מחיר:</strong> מה זה עושה לאווירה ולמוטיבציה שלנו?</li>
+                        <li><strong>סיבות:</strong> למה זה קורה? (פער בתקשורת? חוסר הערכה?).</li>
+                        <li><strong>פעולה:</strong> מה הצעד הקטן שהמפקד/אנחנו יכולים לעשות אחרת?</li>
                     </ol>
                 </div>
-                <div class="highlights">
-                    <strong>דגש למנחה:</strong> אל תפחד מהשקט. תן ללוחמים להציף את הקשיים. תפקידך הוא לא לפתור להם את הבעיות, אלא לעזור להם להבין אותן.
+                <div class="pro-tip">
+                    <strong>דגש למנחה:</strong> אל תנסה להגן על המפקדים. תן ללוחמים להוציא את הקיטור, אך נתב אותו לשיח בונה של "מה עושים עם זה".
                 </div>
             </div>
         </div>
@@ -140,29 +141,58 @@
         <div id="d3" class="card-content">
             
             <div class="unit" style="border-right-color: var(--day3);">
-                <h3>יחידה 1: במה אישית</h3>
-                <div class="details">
-                    <strong>דגשים לביצוע:</strong>
-                    <ul>
-                        <li>לוודא שהלוחמים שהתנדבו מרגישים בנוח.</li>
-                        <li>לבקש מהקהל (המחלקה) לתת משוב של "הכרה" בסיום כל הצגה.</li>
-                    </ul>
+                <h3>יחידה 1: במה אישית (הכרה וחותם)</h3>
+                <p>לוחמים נבחרים מציגים כישרון או סיפור אישי.</p>
+                <div class="question-box">
+                    <span>שאלת סיכום לכל הצגה:</span>
+                    "מחלקה, מה למדתם על החבר שלכם שלא ידעתם קודם? איך הכישרון שלו יכול לעזור לנו כצוות?"
                 </div>
             </div>
 
             <div class="unit" style="border-right-color: var(--day3);">
-                <h3>יחידה 2: שיחת סיכום מ"מ</h3>
-                <div class="details">
-                    <strong>שאלות הכנה למ"מ לקראת השיחה:</strong>
-                    <div class="question-box">
-                        <ul>
-                            <li>"מה מתוך מה ששמעת אתמול מהלוחמים הכי הפתיע אותך?"</li>
-                            <li>"אילו 2-3 החלטות מעשיות אתה הולך להציג להם עכשיו?"</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="highlights">
-                    <strong>דגש למנחה:</strong> זהו רגע הניצחון של המ"מ. וודא שהוא מדבר בביטחון ושדבריו מייצרים "אופק" למחלקה.
-                </div>
+                <h3>יחידה 2: שיחת צוות וסיכום מ"מ</h3>
+                <span class="section-title">דגשים למ"מ:</span>
+                <ul>
+                    <li>דבר בגובה העיניים.</li>
+                    <li>התייחס ספציפית לפערים שעלו ביום השני.</li>
+                    <li>סיכום: "מחר בבוקר, הדבר הראשון שאני משנה זה..."</li>
+                </ul>
             </div>
         </div>
+    </div>
+
+    <div class="section-card" style="border-radius:15px; background: #fff; border:1px solid #ddd; padding: 20px;">
+        <h3 style="margin-top:0;">📚 נספחים וכלים למנחה</h3>
+        <div class="methodology">
+            <strong>צ'ק-ליסט לפני סגירה:</strong>
+            <ul>
+                <li>האם המ"מ מרגיש בטוח להוביל את שיחת הסיום?</li>
+                <li>האם כל לוחם קיבל לפחות "רגע אחד של נראות"?</li>
+                <li>האם הוגדרו צעדים מעשיים להמשך?</li>
+            </ul>
+        </div>
+        <a href="https://drive.google.com/file/d/11pS5opf3smmlKeJ-NJp1CIONUh5YQpzR/view?usp=sharing" target="_blank" class="btn">🔗 פתיחת חוברת המנחה המלאה</a>
+    </div>
+
+    <div class="footer-nav">
+        <p style="font-size: 0.8rem; color: #888;">תוכנית "מרימים משקפת" | מותאם למובייל</p>
+    </div>
+
+</div>
+
+<script>
+    function toggle(header, id) {
+        var content = document.getElementById(id);
+        var arrow = header.querySelector('span');
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            arrow.classList.remove('rotate');
+        } else {
+            content.style.display = "block";
+            arrow.classList.add('rotate');
+        }
+    }
+</script>
+
+</body>
+</html>
